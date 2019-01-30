@@ -33,13 +33,19 @@
 
             var image = L.imageOverlay('badlands map.png', [southWest,northEast]).addTo(map);
             
-            var pimple = L.polygon([pixy([1070,450]), pixy([1085, 580]), pixy([1180, 580]), pixy([1160, 470])], {
+            var pimple = L.polygon([pixy([1070,450]), pixy([1085, 580]),pixy([1125,565]),pixy([1165,525]), pixy([1160, 470])], {
                 color: 'red',
                 fillColor: '#f03',
                 fillOpacity: 0.5});
             pimple.addTo(map);
-            L.marker(pixy([1125, 530])).addTo(map).bindPopup('Giants');
+            L.marker(pixy([1125, 530])).addTo(map).bindPopup('<b>Giants.</b><br>The mountain here has many signs of infected and there are at least some tunnels or caves where giants hide. No telling how far down it goes.');
             
+			var giantAlley = L.polygon([pixy([1300,430]),pixy([1410,450]),pixy([1410,460]),pixy([1400,455]),pixy([1400,490]),pixy([1375,490]),pixy([1375,460]),pixy([1300,460])], {
+			    color: 'red',
+				fillColor: '#f03',
+				fillOpacity: 0.5});
+			giantAlley.addTo(map);
+			L.marker(pixy([1390,460])).addTo(map).bindPopup('<b>Giants.</b><br>Valleys in between mountain ranges full of caves and other hiding places for giants.');
         </script>
     </body>
 </html>
