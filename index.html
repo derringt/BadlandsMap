@@ -3,8 +3,12 @@
 <html style="height: 100%; width: 100%">
     <head>
         <title>Threats in the Badlands</title>
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
-        <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-
+
+puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-
+
+QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
         <style>
             body {
                 background-color: black;
@@ -23,12 +27,23 @@
 
         <div id="mapid"></div>
         <script type="text/javascript">
-            var map = L.map('mapid', {crs: L.CRS.Simple});
-            var bounds = [[0,0], [1000,1000]];
-            var image = L.imageOverlay('badlands map.png', bounds).addTo(map);
-            map.fitBounds(bounds);
+            function pixy(coords) {
+                return map.unproject([coords[0], coords[1]], map.getMaxZoom());
+            };
+            var map = L.map('mapid', {crs: L.CRS.Simple, maxZoom: 20, minZoom: 20}).setView([0,0], 20);
+            var southWest = map.unproject([0, 1498], map.getMaxZoom());
+            var northEast = map.unproject([1600, 0], map.getMaxZoom());
+            map.setMaxBounds(new L.LatLngBounds(southWest, northEast));
+
+            var image = L.imageOverlay('badlands map.png', [southWest,northEast]).addTo(map);
             
-            var pimple = L.marker([600,600]).addTo(mymap);
+            var pimple = L.polygon([pixy([1070,450]), pixy([1085, 580]), pixy([1180, 580]), pixy([1160, 470])], {
+                color: 'red',
+                fillColor: '#f03',
+                fillOpacity: 0.5});
+            pimple.addTo(map);
+            L.marker(pixy([1125, 530]), {color: 'red'}).addTo(map).bindPopup('Giants');
+            
         </script>
     </body>
 </html>
