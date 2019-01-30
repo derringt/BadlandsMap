@@ -1,38 +1,31 @@
 <!DOCTYPE html>
+
 <html style="height: 100%; width: 100%">
     <head>
-       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
-   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
-   crossorigin=""/>
-   
-       <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
-   integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
-   crossorigin=""></script>
-       
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
         <style>
             body {
-                background-color: transparent;
+                background-color: black;
                 width: 100%;
                 height: 100%;
                 overflow: hidden;
                 margin: 0;
-               }
-           #mapid { 
-              height: 100%;
-              width: 100%;
-           }
-        </style>       
-       
-   <body>
-      <div id="mapid"></div>
-      <script type="text/javascript">
-      var map = L.map('map', {
-       crs: L.CRS.Simple
-      });
+                }
+            #mapid {
+                height: 100%;
+                width: 100%;
+                }
+        </style>
 
-      var bounds = [[0,0], [1000,1000]];
-      var image = L.imageOverlay('https://static.wixstatic.com/media/95472f_4d7c67ea836f44b79a942d14736011e9~mv2_d_1600_1498_s_2.png', bounds).addTo(map);
-      map.fitBounds(bounds);
-      </script>
-      </body>
-       </html>
+    <body>
+
+        <div id="mapid"></div>
+        <script type="text/javascript">
+            var map = L.map('mapid', {crs: L.CRS.Simple});
+            var bounds = [[0,0], [1000,1000]];
+            var image = L.imageOverlay('https://static.wixstatic.com/media/95472f_4d7c67ea836f44b79a942d14736011e9~mv2_d_1600_1498_s_2.png', bounds).addTo(map);
+            map.fitBounds(bounds);
+        </script>
+    </body>
+</html>
