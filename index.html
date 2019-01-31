@@ -26,9 +26,9 @@
             function pixy(coords) {
                 return map.unproject([coords[0], coords[1]], map.getMaxZoom());
             };
-            var map = L.map('mapid', {crs: L.CRS.Simple, maxZoom: 20, minZoom: 20}).setView([0,0], 20);
-            var southWest = map.unproject([0, 1498], map.getMaxZoom());
-            var northEast = map.unproject([1600, 0], map.getMaxZoom());
+            var map = L.map('mapid', {crs: L.CRS.Simple, maxZoom: 2, minZoom: 2}).setView([0,0], 2);
+            var southWest = pixy([0, 1498]);
+            var northEast = pixy([1600, 0]);
             map.setMaxBounds(new L.LatLngBounds(southWest, northEast));
 
             var image = L.imageOverlay('badlands map.png', [southWest,northEast]).addTo(map);
@@ -46,6 +46,14 @@
 				fillOpacity: 0.5});
 			giantAlley.addTo(map);
 			L.marker(pixy([1390,460])).addTo(map).bindPopup('<b>Giants.</b><br>Valleys in between mountain ranges full of caves and other hiding places for giants.');
+			
+			var byaza = L.circleMarker(pixy([835,490]), {
+				radius: 90,
+				color: 'white',
+				fillColor: '#FFFFF0',
+				fillOpacity: 0.5});
+			byaza.addTo(map);
+			L.marker(pixy([835,490])).addTo(map).bindPopup('<b>Byaza.</b><br>Guarded by Arkevian mummies. Unsure of threat level, but has caused mind-affecting visions for people far from its location.');
         </script>
     </body>
 </html>
