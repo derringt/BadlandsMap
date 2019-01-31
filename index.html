@@ -48,12 +48,28 @@
 			L.marker(pixy([1390,460])).addTo(map).bindPopup('<b>Giants.</b><br>Valleys in between mountain ranges full of caves and other hiding places for giants.');
 			
 			var byaza = L.circleMarker(pixy([1315,840]), {
-				radius: 40,
+				radius: 30,
 				color: 'white',
 				fillColor: '#FFFFF0',
 				fillOpacity: 0.5});
 			byaza.addTo(map);
-			L.marker(pixy([1315,840])).addTo(map).bindPopup('<b>Byaza.</b><br>Guarded by Arkevian mummies. Unsure of threat level, but has caused mind-affecting visions for people far from its location.');
+			L.marker(pixy([1315,850])).addTo(map).bindPopup('<b>Byaza.</b><br>Guarded by Arkevian mummies. Unsure of threat level, but has caused mind-affecting visions for people far from its location.');
+			
+			var cabalTemple = L.circleMarker(pixy([1270,625]), {
+			    radius: 35,
+				color: 'silver',
+				fillColor: 'gray',
+				fillOpacity: 0.5});
+			cabalTemple.addTo(map);
+			L.marker(pixy([1270,635])).addTo(map).bindPopup('<b>Cabal.</b><br>Large temple to Kaliestes. Massive army of undead.');
+			
+			var genDuram = L.circleMarker(pixy([1365,830]), {
+				radius: 10,
+				color: 'cyan',
+				fillColor: '#008B8B',
+				fillOpacity: 0.5});
+				genDuram.addTo(map);
+			L.marker(pixy([1365,835])).addTo(map).bindPopup('<b>Gen Duram.</b><br>Entrance to ruined deep dwarf city. Possible illithid presence.');
         </script>
     </body>
 </html>
