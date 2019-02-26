@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html style="height: 100%; width: 100%">
+    <head>
+        <title>Threats in the Badlands</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
+        <style>
+            body {
+                background-color: black;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                margin: 0;
+                }
+            #mapid {
+                height: 100%;
+                width: 100%;
+                }
+        </style>
+
+    <body>
+
+        <div id="mapid"></div>
+        <script type="text/javascript">
+            function pixy(coords) {
+                return map.unproject([coords[0], coords[1]], map.getMaxZoom());
+            };
+            var map = L.map('mapid', {crs: L.CRS.Simple, maxZoom: 2, minZoom: 2}).setView([0,0], 2);
+            var southWest = pixy([0, 1498]);
+            var northEast = pixy([1600, 0]);
+            map.setMaxBounds(new L.LatLngBounds(southWest, northEast));
+
+            var image = L.imageOverlay('badlands map.png', [southWest,northEast]).addTo(map);
+            
+         </script>
+    </body>
+</html>
