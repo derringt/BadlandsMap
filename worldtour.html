@@ -38,6 +38,53 @@
 	    L.marker(pixy([270, 1275])).addTo(map).bindPopup('<b>Fertile Valley</b>');
 	    L.marker(pixy([1500, 1475])).addTo(map).bindPopup('<b>Shining Sea</b>');
 	    L.marker(pixy([1230, 100])).addTo(map).bindPopup('<b>Giantholm</b>');
+		
+		
+            var pimple = L.polygon([pixy([1070,450]), pixy([1085, 580]),pixy([1125,565]),pixy([1165,525]), pixy([1160, 470])], {
+                color: 'red',
+                fillColor: '#f03',
+                fillOpacity: 0.5});
+            pimple.addTo(map);
+            L.marker(pixy([1125, 530])).addTo(map).bindPopup('<b>Giants.</b><br>The mountain here has many signs of infected and there are at least some tunnels or caves where giants hide. No telling how far down it goes.');
+            
+			var giantAlley = L.polygon([pixy([1300,430]),pixy([1410,450]),pixy([1410,460]),pixy([1400,455]),pixy([1400,490]),pixy([1375,490]),pixy([1375,460]),pixy([1300,460])], {
+			    color: 'red',
+				fillColor: '#f03',
+				fillOpacity: 0.5});
+			giantAlley.addTo(map);
+			L.marker(pixy([1390,460])).addTo(map).bindPopup('<b>Giants.</b><br>Valleys in between mountain ranges full of caves and other hiding places for giants.');
+			
+			var byaza = L.circleMarker(pixy([1315,840]), {
+				radius: 30,
+				color: 'white',
+				fillColor: '#FFFFF0',
+				fillOpacity: 0.5});
+			byaza.addTo(map);
+			L.marker(pixy([1315,850])).addTo(map).bindPopup('<b>Byaza.</b><br>Guarded by Arkevian mummies. Unsure of threat level, but has caused mind-affecting visions for people far from its location.');
+			
+			var cabalTemple = L.circleMarker(pixy([1270,625]), {
+			    radius: 35,
+				color: 'silver',
+				fillColor: 'gray',
+				fillOpacity: 0.5});
+			cabalTemple.addTo(map);
+			L.marker(pixy([1270,635])).addTo(map).bindPopup('<b>Cabal.</b><br>Large temple to Kaliestes. Massive army of undead.');
+			
+			var genDuram = L.circleMarker(pixy([1365,830]), {
+				radius: 10,
+				color: 'cyan',
+				fillColor: '#008B8B',
+				fillOpacity: 0.5});
+				genDuram.addTo(map);
+			L.marker(pixy([1365,835])).addTo(map).bindPopup('<b>Gen Duram.</b><br>Entrance to ruined deep dwarf city. Possible illithid presence.');
+			
+			var wormRiders = L.polygon([pixy([1070,450]),pixy([1160,470]),pixy([1160, 430]),pixy([1115,425])], {
+				color: 'magenta',
+				fillColor: 'purple',
+				fillOpacity: 0.25});
+			wormRiders.addTo(map);
+			L.marker(pixy([1125,450])).addTo(map).bindPopup('<b>Purple Worm Riders.</b><br>No activity recently. Need to maintain vigiliance, might be able to broker truce.');
+
          </script>
     </body>
 </html>
