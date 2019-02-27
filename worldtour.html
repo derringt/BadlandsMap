@@ -26,17 +26,17 @@
             function pixy(coords) {
                 return map.unproject([coords[0], coords[1]], map.getMaxZoom());
             };
-            var map = L.map('mapid', {crs: L.CRS.Simple, maxZoom: 2, minZoom: 2}).setView([0,0], 2);
+            var map = L.map('mapid', {crs: L.CRS.Simple, maxZoom: 5, minZoom: 2}).setView([0,0], 5);
             var southWest = pixy([0, 1498]);
             var northEast = pixy([1600, 0]);
             map.setMaxBounds(new L.LatLngBounds(southWest, northEast));
 
-            var image = L.imageOverlay('badlands map.png', [southWest,northEast]).addTo(map);
+            var image = L.imageOverlay('https://github.com/derringt/BadlandsMap/blob/master/badlands%20map.png?raw=true', [southWest,northEast]).addTo(map);
 			
             L.marker(pixy([115, 385])).addTo(map).bindPopup('<b>Glass Lake</b>');
-			L.marker(pixy([1150, 1250])).addTo(map).bindPopup('<b>Titanblud</b>');
-			L.marker(pixy([270, 1275])).addTo(map).bindPopup('<b>Fertile Valley</b>');
-			L.marker(pixy([1500, 1475])).addTo(map).bindPopup('<b>Shining Sea</b>');
+	    L.marker(pixy([1150, 1250])).addTo(map).bindPopup('<b>Titanblud</b>');
+	    L.marker(pixy([270, 1275])).addTo(map).bindPopup('<b>Fertile Valley</b>');
+	    L.marker(pixy([1500, 1475])).addTo(map).bindPopup('<b>Shining Sea</b>');
          </script>
     </body>
 </html>
