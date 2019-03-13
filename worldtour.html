@@ -33,20 +33,18 @@
 
             var image = L.imageOverlay('https://github.com/derringt/BadlandsMap/blob/master/badlands%20map.png?raw=true', [southWest,northEast]).addTo(map);
 			
-            L.marker(pixy([115, 385])).addTo(map).bindPopup('<b>Glass Lake</b>');
-	    L.marker(pixy([1150, 1250])).addTo(map).bindPopup('<b>Titanblud</b>');
-	    L.marker(pixy([270, 1275])).addTo(map).bindPopup('<b>Fertile Valley</b>');
-	    L.marker(pixy([1500, 1475])).addTo(map).bindPopup('<b>Shining Sea</b>');
-	    L.marker(pixy([1230, 100])).addTo(map).bindPopup('<b>Giantholm</b>');
+			L.marker(pixy([115, 385])).addTo(map).bindPopup('<b>Glass Lake</b>');
+			L.marker(pixy([1150, 1250])).addTo(map).bindPopup('<b>Titanblud</b>');
+			L.marker(pixy([270, 1275])).addTo(map).bindPopup('<b>Fertile Valley</b>');
+			L.marker(pixy([1500, 1475])).addTo(map).bindPopup('<b>Shining Sea</b>');
+			L.marker(pixy([1230, 100])).addTo(map).bindPopup('<b>Giantholm</b>');
 		
-		
-		L.marker(pixy([1070,565])).addTo(map).bindPopup('<b>Meridiem Entrance</b>');
+			L.marker(pixy([1070,565])).addTo(map).bindPopup('<b>Meridiem Entrance</b>');
 			
-		var firstLegList = [pixy([1000,835]), pixy([1100, 725]), pixy([1045,615]), pixy([1070,565])]
+			var firstLegList = [pixy([1000,835]), pixy([1100, 725]), pixy([1045,615]), pixy([1070,565])]
 			
-		L.polyline(firstLegList, {color: 'yellow'}).addTo(map);
-		L.marker(pixy([1073,670])).addTo(map).bindPopup('<b>Leg 1. Travel to Meridiem.</b><br>Pisces makes a fool of himself.');
-			
+			L.polyline(firstLegList, {color: 'yellow'}).addTo(map);
+			L.marker(pixy([1073,670])).addTo(map).bindPopup('<b>Leg 1. Travel to Meridiem.</b><br>Pisces makes a fool of himself.');
          </script>
     </body>
 </html>
