@@ -68,7 +68,11 @@
 			L.marker(pixy([1125,450])).addTo(map).bindPopup('<b>Purple Worm Riders.</b><br>No activity recently. Need to maintain vigiliance, might be able to broker truce.');
 		
 			L.marker(pixy([1070,565])).addTo(map).bindPopup('<b>Meridiem Entrance</b>');
-
+			
+			var firstLegList = [pixy([1000,835]), pixy([1100, 725]), pixy([1045,615]), pixy([1070,565])]
+			
+			L.polyline(firstLegList, {color: 'yellow'}).addTo(map);
+			L.marker(pixy([1073,670])).addTo(map).bindPopup('<b>Leg 1. Travel to Meridiem.</b><br>Pisces makes a fool of himself.');
          </script>
     </body>
 </html>
