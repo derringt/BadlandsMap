@@ -44,7 +44,12 @@
 			var firstLegList = [pixy([1000,835]), pixy([1100, 725]), pixy([1045,615]), pixy([1070,565])]
 			
 			L.polyline(firstLegList, {color: 'yellow'}).addTo(map);
-			L.marker(pixy([1073,670])).addTo(map).bindPopup('<b>Leg 1. Travel to Meridiem.</b><br>Pisces makes a fool of himself.');
+			L.marker(pixy([1072.5,670])).addTo(map).bindPopup('<b>Leg 1. Travel to Meridiem.</b><br>Pisces makes a fool of himself.');
+			
+			var secondLegList = [pixy([1070,565]),pixy([1045,620]),pixy([1055, 630]),pixy([1125,595])]
+			
+			L.polyline(secondLegList, {color: 'blue'}).addTo(map);
+			L.marker(pixy([1090, 612.5])).addTo(map).bindPopup('<b>Leg 2. Travel from Meridiem to Gold Shield.');
          </script>
     </body>
 </html>
