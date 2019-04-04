@@ -32,25 +32,28 @@
             map.setMaxBounds(new L.LatLngBounds(southWest, northEast));
 
             var image = L.imageOverlay('https://github.com/derringt/BadlandsMap/blob/master/badlands%20map.png?raw=true', [southWest,northEast]).addTo(map);
-			
-			L.marker(pixy([115, 385])).addTo(map).bindPopup('<b>Glass Lake</b>');
-			L.marker(pixy([1150, 1250])).addTo(map).bindPopup('<b>Titanblud</b>');
-			L.marker(pixy([270, 1275])).addTo(map).bindPopup('<b>Fertile Valley</b>');
-			L.marker(pixy([1500, 1475])).addTo(map).bindPopup('<b>Shining Sea</b>');
-			L.marker(pixy([1230, 100])).addTo(map).bindPopup('<b>Giantholm</b>');
+            			
+            L.marker(pixy([115, 385])).addTo(map).bindPopup('<b>Glass Lake</b>');
+            L.marker(pixy([1150, 1250])).addTo(map).bindPopup('<b>Titanblud</b>');
+            L.marker(pixy([270, 1275])).addTo(map).bindPopup('<b>Fertile Valley</b>');
+            L.marker(pixy([1500, 1475])).addTo(map).bindPopup('<b>Shining Sea</b>');
+            L.marker(pixy([1230, 100])).addTo(map).bindPopup('<b>Giantholm</b>');
 		
-			L.marker(pixy([1070,565])).addTo(map).bindPopup('<b>Meridiem Entrance</b>');
+            L.marker(pixy([1070,565])).addTo(map).bindPopup('<b>Meridiem Entrance</b>');
 			
-			var firstLegList = [pixy([1000,835]), pixy([1100, 725]), pixy([1045,615]), pixy([1070,565])]
+            var firstLegList = [pixy([1000,835]), pixy([1100, 725]), pixy([1045,615]), pixy([1070,565])]
 			
-			L.polyline(firstLegList, {color: 'yellow'}).addTo(map);
-			L.marker(pixy([1072.5,670])).addTo(map).bindPopup('<b>Leg 1. Travel to Meridiem.</b><br>Pisces makes a fool of himself.');
+            L.polyline(firstLegList, {color: 'yellow'}).addTo(map);
+            L.marker(pixy([1072.5,670])).addTo(map).bindPopup('<b>Leg 1. Travel to Meridiem.</b><br>Pisces makes a fool of himself.');
 			
-			var secondLegList = [pixy([1070,565]),pixy([1045,620]),pixy([1055, 630]),pixy([1125,595]),pixy([1175,490]),pixy([1235,425]),pixy([1260,390]),pixy([1260,350]),pixy([1270,330]),pixy([1210,280])]
+            var secondLegList = [pixy([1070,565]),pixy([1045,620]),pixy([1055, 630]),pixy([1125,595]),pixy([1175,490]),pixy([1235,425]),pixy([1260,390]),pixy([1260,350]),pixy([1270,330]),pixy([1210,280]),pixy([1210,250]),pixy([1240,235]),pixy([1213,215]),pixy([1185,210]),pixy([1122,201])]
 			
-			L.polyline(secondLegList, {color: 'blue'}).addTo(map);
-			L.marker(pixy([1205,450])).addTo(map).bindPopup('<b>Leg 2. Travel from Meridiem to Gold Shield and onto Giantholm.');
-		        L.marker(pixy([1125,595])).addTo(map).bindPopup('<b>Vorgoth Ambush.</b><br>Ambushed by a warlock of Vorgoth, who said they were after Asim "the Betrayer"');
-         </script>
+            L.polyline(secondLegList, {color: 'blue'}).addTo(map);
+            L.marker(pixy([1205,450])).addTo(map).bindPopup('<b>Leg 2. Travel from Meridiem to Gold Shield and onto Giantholm.');
+            L.marker(pixy([1125,595])).addTo(map).bindPopup('<b>Vorgoth Ambush.</b><br>Ambushed by a warlock of Vorgoth, who said they were after Asim "the Betrayer"');
+            L.marker(pixy([1185, 210])).addTo(map).bindPopup('<b>Frost Giant Cave.</b><br>A cave on the side of Giantholm, with a large glacier inside. Demons and Frost Giants laid in ambush.');
+            L.marker(pixy([1122,201])).addTo(map).bindPopup('<b>False Summit of Giantholm.</b><br>A false summit of Giantholm. From here, looking down to the west, you can see the ruins of the Temple City.');
+            L.marker(pixy([1083,237])).addTo(map).bindPopup('<b>Temple City.</b><br>The ruins of the temple city, large statues clearly patrolling the immense grounds.');
+        </script>
     </body>
 </html>
